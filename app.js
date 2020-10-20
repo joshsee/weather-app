@@ -25,7 +25,7 @@ request({url: geoCodeUrl, json: true}, function (error, response, body) {
     if (error){
         console.log('Unable to connect to mapbox')
     } else if(body.features.length==0){
-        console.log('No feature')
+        console.log('Unable to find location. Try another search')
     } else {
         const longtitude =  body.features[0].center[0]
         const latitude = body.features[0].center[1]
