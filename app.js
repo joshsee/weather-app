@@ -18,10 +18,17 @@ request({url: url, json: true}, function (error, response, body) {
 });
 
 
-const geoCodeUrl = 'https://api.mapbox.com/geocoding/v5/mapbox.places/hong%20kong.json?access_token='+ apiKey.mapBoxToken +'&limit=1'
+const geoCodeUrl = 'https://api.mapbox.com/geocoding/v5/mapbox.places/2345hkf%20.json?access_token='+ apiKey.mapBoxToken +'&limit=1'
 
 request({url: geoCodeUrl, json: true}, function (error, response, body) {
-    const longtitude =  body.features[0].center[0]
-    const latitude = body.features[0].center[1]
-    console.log(latitude, longtitude)
+    
+    if (error){
+        console.log('Unable to connect to mapbox')
+    } else if(body.features.length==0){
+        console.log('No feature')
+    } else {
+        const longtitude =  body.features[0].center[0]
+        const latitude = body.features[0].center[1]
+        console.log(latitude, longtitude)
+    }
 });
