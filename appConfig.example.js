@@ -1,4 +1,8 @@
 // Weather Stack
-var weatherStackAPI = 'weatherStackAPI';
+const weatherStackToken = 'TOKEN_HERE';
+const mapBoxToken = 'TOKEN_HERE';
 
-module.exports = { weatherStackAPI: weatherStackAPI };
+module.exports = { 
+    weatherStackToken: weatherStackToken,
+    mapBoxToken: mapBoxToken
+};
