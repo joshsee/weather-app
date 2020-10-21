@@ -1,5 +1,6 @@
 const apiKey = require('./appConfig.js')
 const geocode = require('./utils/geocode')
+const forecast = require('./utils/forecast')
 
 // const url = 'http://api.weatherstack.com/current?access_key='+ apiKey.weatherStackToken +'&query=Hong%20Kong'
 
@@ -18,22 +19,12 @@ const geocode = require('./utils/geocode')
 // });
 
 
-// const geoCodeUrl = 'https://api.mapbox.com/geocoding/v5/mapbox.places/2345hkf%20.json?access_token='+ apiKey.mapBoxToken +'&limit=1'
-
-// request({url: geoCodeUrl, json: true}, function (error, response, body) {
-    
-//     if (error){
-//         console.log('Unable to connect to mapbox')
-//     } else if(body.features.length==0){
-//         console.log('Unable to find location. Try another search')
-//     } else {
-//         const longtitude =  body.features[0].center[0]
-//         const latitude = body.features[0].center[1]
-//         console.log(latitude, longtitude)
-//     }
-// });
-
 geocode('muar', (error, data) =>{
     console.log('Error', error)
     console.log('Data', data)
 })
+
+forecast('2.05a', 102.57, (error, data) => {
+    console.log('Error', error)
+    console.log('Data', data)
+  })
